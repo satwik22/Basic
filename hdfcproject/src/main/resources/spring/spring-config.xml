@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- <bean id="creditcard1" class="com.hcl.hdfcproject.model.CreditCard">
+		<property name="cardNumber" value="563214785965"/>
+		<property name="cardHolderName" value="Pandu"/>
+		<property name="cvv" value="123"/>
+		<property name="expiryDate" value="5/15/2023"/>
+	</bean>
+	 -->
+	<bean id="creditcard"
+		class="com.hcl.hdfcproject.model.CreditCard">
+		<constructor-arg value="563214785965" type="long"/>
+		<constructor-arg value="satwik" type="String"/>
+		<constructor-arg value="456" type="int"/>
+		<constructor-arg value="5/16/2023" type="java.util.Date"/>
+	</bean>
+	
+	<bean id="cardObj" class="com.hcl.hdfcproject.model.Cards" autowire="byName">
+		<property name="customerId" value="5264"></property>
+		<!-- <property name="creditcard" ref="creditcard"></property> -->
+		
+	</bean>
+	
+	
+	<!-- <bean id="cardObj" class="com.hcl.hdfcproject.model.Cards" autowire="byType">
+		<property name="customerId" value="5264"></property>
+		<property name="creditcard" ref="creditcard"></property>
+		
+	</bean> -->
+	
+	<!-- 
+	<bean id="cardObj" class="com.hcl.hdfcproject.model.Cards" autowire="byType">
+		<property name="customerId" value="5264"></property>
+		<property name="creditcard" ref="creditcard"></property>
+		
+	</bean>
+ -->
+	
+</beans>
